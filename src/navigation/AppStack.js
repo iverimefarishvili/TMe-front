@@ -11,6 +11,7 @@ import MomentsScreen from '../screens/MomentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 import TabNavigator from './TabNavigator';
+import MapScreen from '../screens/MapScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,7 +20,7 @@ const AuthStack = () => {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         drawerActiveBackgroundColor: '#aa18ea',
         drawerActiveTintColor: '#fff',
         drawerInactiveTintColor: '#333',
@@ -62,6 +63,15 @@ const AuthStack = () => {
         options={{
           drawerIcon: ({color}) => (
             <Ionicons name="timer-outline" size={22} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Map"
+        component={MapScreen}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons name="settings-outline" size={22} color={color} />
           ),
         }}
       />
